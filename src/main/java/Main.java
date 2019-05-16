@@ -2,10 +2,10 @@
 public class Main {
 	public static void main(String[] args) {
 
-//			String path = "C:\\Users\\Автоматика3\\IdeaProjects\\DZpasalgorithms\\Comtrades\\";
-			String path = "/Users/alexbol96/IdeaProjects/DZpasalgorithms/Comtrades/";
+			String path = "C:\\Users\\Автоматика3\\IdeaProjects\\DZpasalgorithms\\Comtrades\\";
+			//String path = "/Users/alexbol96/IdeaProjects/DZpasalgorithms/Comtrades/";
 //			String path = "C:\\Users\\alexbol96\\IdeaProjects\\DZpasalgorithms\\Comtrades\\";
-			String file = "KZ5";
+			String file = "KZ4";
 			DataComtrade cd = new DataComtrade(path, file);
 //		cd.setChart(ch);
 //		DZChart.create();
