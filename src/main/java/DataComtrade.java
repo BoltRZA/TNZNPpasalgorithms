@@ -87,12 +87,9 @@ public class DataComtrade {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        Furie fIa = new Furie();
-        Furie fIb = new Furie();
-        Furie fIc = new Furie();
-        Furie fUa = new Furie();
-        Furie fUb = new Furie();
-        Furie fUc = new Furie();
+        Furie fI0= new Furie();
+        Furie fU0 = new Furie();
+
         Double Uamgn;
         Double Ubmgn;
         Double Ucmgn;
@@ -106,25 +103,25 @@ public class DataComtrade {
                 Uamgn = Double.parseDouble(lineData[2])*k1[0]+k2[0];
                 Ubmgn = Double.parseDouble(lineData[3])*k1[1]+k2[1];
                 Ucmgn = Double.parseDouble(lineData[4])*k1[2]+k2[2];
+
+                double U0 = Uamgn+Ucmgn+Ubmgn;
+
+
                 Iamgn = Double.parseDouble(lineData[5])*k1[3]+k2[3];
                 Ibmgn = Double.parseDouble(lineData[6])*k1[4]+k2[4];
                 Icmgn = Double.parseDouble(lineData[7])*k1[5]+k2[5];
 
-                realIs[0] = fIa.getReal(Iamgn);
-                realIs[1] = fIb.getReal(Ibmgn);
-                realIs[2] = fIc.getReal(Icmgn);
+                double I0 = Iamgn + Ibmgn + Icmgn;
 
-                imagIs[0] = fIa.getImaginary(Iamgn);
-                imagIs[1] = fIb.getImaginary(Ibmgn);
-                imagIs[2] = fIc.getImaginary(Icmgn);
 
-                realUs[0] = fUa.getReal(Uamgn);
-                realUs[1] = fUb.getReal(Ubmgn);
-                realUs[2] = fUc.getReal(Ucmgn);
+                realIs[0] = fI0.getReal(I0);
+                imagIs[0] = fI0.getImaginary(I0);
 
-                imagUs[0] = fUa.getImaginary(Uamgn);
-                imagUs[1] = fUb.getImaginary(Ubmgn);
-                imagUs[2] = fUc.getImaginary(Ucmgn);
+
+                realUs[0] = fU0.getReal(U0);
+                imagUs[0] = fU0.getImaginary(U0);
+
+
 
                 if (fUc.wait80() == true) {
                     ABflag = AB.Breaker(realUs[0], realUs[1], imagUs[0], imagUs[1], realIs[0], realIs[1], imagIs[0], imagIs[1]);
